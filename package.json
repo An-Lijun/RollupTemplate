@@ -17,6 +17,7 @@
     "@rollup/plugin-babel": "^6.0.3",
     "@types/node": "^20.6.4",
     "eslint": "^8.50.0",
+    "prettier": "^3.0.3",
     "rollup": "^3.29.2",
     "rollup-plugin-dts": "^6.0.2",
     "rollup-plugin-typescript2": "^0.35.0",
