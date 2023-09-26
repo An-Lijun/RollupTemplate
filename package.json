@@ -3,12 +3,16 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "npx rollup -c",
     "doc": "api-extractor run --local --verbose && api-documenter markdown -i temp -o doc",
     "doc:debug": "api-extractor run --local --verbose --diagnostics && api-documenter markdown -i temp -o doc",
-    "trace": "tsc dist/types/index.d.ts --traceResolution > trace.log"
+    "trace": "tsc dist/types/index.d.ts --traceResolution > trace.log",
+    "docs:dev": "vitepress dev",
+    "docs:build": "vitepress build",
+    "docs:preview": "vitepress preview"
   },
   "author": "",
   "license": "ISC",
@@ -22,11 +26,14 @@
     "@rollup/plugin-babel": "^6.0.3",
     "@types/node": "^20.6.4",
     "eslint": "^8.50.0",
+    "fast-glob": "^3.3.1",
     "prettier": "^3.0.3",
     "rollup": "^3.29.2",
     "rollup-plugin-dts": "^6.0.2",
     "rollup-plugin-typescript2": "^0.35.0",
-    "typescript": "^5.2.2"
+    "typescript": "^5.2.2",
+    "vitepress": "1.0.0-rc.20",
+    "vue": "^3.3.4"
   },
   "dependencies": {
     "@babel/plugin-transform-runtime": "^7.22.15"

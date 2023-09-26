@@ -4,13 +4,13 @@
 
 ```ts
 
-// @public (undocumented)
-export const a: (a: number) => void;
-
-// @public (undocumented)
+// @public
 export function add(n: number, b: number): void;
 
-// @public (undocumented)
+// @public
+export function minni(a: number, b: number): number;
+
+// @public
 export function mix(a: number, b: number): number;
 
 // (No @packageDocumentation comment for this package)

@@ -21,9 +21,10 @@
 ## AI注释 Mintlify Doc
   安装
 
-------
-TSDoc
+## TSDoc
 vitepress
+------
+
 Netlify
  babel
  husky commitLint
