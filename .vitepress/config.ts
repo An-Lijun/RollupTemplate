@@ -71,7 +71,7 @@ export default defineConfig({
   themeConfig: {
   // https://vitepress.dev/reference/default-theme-config
       nav: [
-          { text: '主页', link: '/doc/index' },
+          { text: '主页', link: '../index' },
           { text: 'API', link: '/doc/index' },
       ],
 

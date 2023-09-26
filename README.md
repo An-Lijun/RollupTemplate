@@ -16,23 +16,27 @@
 ## gitignore
   git的忽略文件
 ## TsDoc
+  注意 这里会根据.types.ts 生成,所以要先build主代码在进行 npm run doc
   这里使用TSDoc规范 生成文档然后生成md 官网https://tsdoc.org/
 
 ## AI注释 Mintlify Doc
-  安装
+ vscode  安装 MINTLIFY 插件
 
-## TSDoc
-vitepress
+## vitepress
+  全自动生成
+  会根据 npm run doc  生成出来的doc文件生成vitepress
+  npm run docs:dev", 开发doc
+  npm run docs:build": 打包doc
+  npm run docs:preview": 查看打包后的doc
+
+自动生成
 ------
 
-Netlify
  babel
  husky commitLint
  测试 
- 注释 文档 手动文档
- 
-
- 
-
+ 文档 手动文档
+ Netlify
+# 其他
 不要使用export default，默认导出会失去摇树优化。
 不要使用export function的写法，而应该将每一个函数归集到一个统一的导出中，便于查看和维护。
