@@ -29,6 +29,8 @@
   npm run docs:build": 打包doc
   npm run docs:preview": 查看打包后的doc
 
+## Jest 
+ts-jest 官网: https://kulshekhar.github.io/ts-jest/docs/getting-started/installation/#jest-config-file
 自动生成
 ------
 

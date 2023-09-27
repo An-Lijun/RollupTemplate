@@ -4,3 +4,6 @@
 /dist
 /src/
 /doc/
+/coverage
+/temp
+/etc
