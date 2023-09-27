@@ -23,6 +23,8 @@
  vscode  安装 MINTLIFY 插件
 
 ## vitepress
+  文档 手动文档
+
   全自动生成
   会根据 npm run doc  生成出来的doc文件生成vitepress
   npm run docs:dev", 开发doc
@@ -32,12 +34,18 @@
 ## Jest 
 ts-jest 官网: https://kulshekhar.github.io/ts-jest/docs/getting-started/installation/#jest-config-file
 自动生成
+
+## gitcommit
+配置了ESlint 后 会有一个命令 叫 npm run lint 会自动检测 配置的文件是否以eslint规定的格式书写,如果不是那么会自动修复,
+为了防止有人没有格式化代码直接提交,这里的办法是 在git commit的时候 将代码自动校验并修复格式化规范
+
+
 ------
 
  babel
  husky commitLint
- 测试 
- 文档 手动文档
+ 压缩
+ treeShaking
  Netlify
 # 其他
 不要使用export default，默认导出会失去摇树优化。
