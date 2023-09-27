@@ -40,6 +40,7 @@ ts-jest 官网: https://kulshekhar.github.io/ts-jest/docs/getting-started/instal
 为了防止有人没有格式化代码直接提交,这里的办法是 在git commit的时候 将代码自动校验并修复格式化规范
 
 
+etc
 ------
 
  babel
