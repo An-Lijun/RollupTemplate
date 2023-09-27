@@ -38,16 +38,16 @@ ts-jest 官网: https://kulshekhar.github.io/ts-jest/docs/getting-started/instal
 ## gitcommit
 配置了ESlint 后 会有一个命令 叫 npm run lint 会自动检测 配置的文件是否以eslint规定的格式书写,如果不是那么会自动修复,
 为了防止有人没有格式化代码直接提交,这里的办法是 在git commit的时候 将代码自动校验并修复格式化规范
+ husky commitLint
+ 打算这里区分soft hard soft 可以git commit  hard 不可以
 
+## treeShaking
+不要使用export default，默认导出会失去摇树优化。
+不要使用export function的写法，而应该将每一个函数归集到一个统一的导出中，便于查看和维护。
 
 etc
 ------
-
  babel
- husky commitLint
  压缩
- treeShaking
  Netlify
 # 其他
-不要使用export default，默认导出会失去摇树优化。
-不要使用export function的写法，而应该将每一个函数归集到一个统一的导出中，便于查看和维护。
