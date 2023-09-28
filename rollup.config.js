@@ -3,8 +3,8 @@ const ts =require('rollup-plugin-typescript2')
 const path =require('path')
 const alias =require('@rollup/plugin-alias')
 const {dts} = require('rollup-plugin-dts')
-const babel =require('@rollup/plugin-babel')
-
+const {getBabelOutputPlugin} =require('@rollup/plugin-babel')
+const terser =require('@rollup/plugin-terser')
 
 // 由于暂时不写cjs 的nodejs 包所以这里就忽略cjs的模块了
 module.exports=defineConfig([{
@@ -31,6 +31,12 @@ module.exports=defineConfig([{
     ts({
       tsconfig:path.resolve(__dirname,'tsconfig.json')
     }),
+    getBabelOutputPlugin({
+      allowAllFormats:true,
+      exclude: 'node_modules/**',
+      configFile: path.resolve(__dirname, 'babel.config.js'),
+    }),
+    terser()
   ]
 },
 // 类型文件

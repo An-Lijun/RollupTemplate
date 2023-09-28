@@ -41,13 +41,17 @@ ts-jest 官网: https://kulshekhar.github.io/ts-jest/docs/getting-started/instal
  husky commitLint
  打算这里区分soft hard soft 可以git commit  hard 不可以
 
+## babel
+babel 代码转换 在ts打包之后执行
+
+## terser
+代码压缩 ,在babel 转换之后执行
+
 ## treeShaking
 不要使用export default，默认导出会失去摇树优化。
 不要使用export function的写法，而应该将每一个函数归集到一个统一的导出中，便于查看和维护。
 
 etc
 ------
- babel
- 压缩
  Netlify
 # 其他
