@@ -13,7 +13,10 @@ interface IndexTree {
 
 // 目录标题去除utils.前缀
 function resolveTitle(title: string) {
-  return title === 'doc' ? title : title.replace('doc.', '')
+   title === 'doc' ? title : title.replace('doc.', '')
+   title === 'etc' ? title : title.replace('etc.', '')
+
+   return title
 }
 
 // 将md文档列表转为树结构
@@ -22,7 +25,7 @@ function getTree(file: string, prefix: string, tree = {}) {
   const curPath = prefix + cur
   if (!tree[curPath]) {
       tree[curPath] = {
-          link: '/doc/' + curPath + '.md',
+          link: '/etc/doc/' + curPath + '.md',
         // link:  curPath + '.md',
       }
   }
@@ -54,12 +57,13 @@ function treeToItems(tree: IndexTree) {
 }
 
 const tree
-= fg.sync(['./doc/**/*.md'])
+= fg.sync(['./etc/doc/**/*.md'])
   .map((path) => basename(path))
   .reduce((tree, file) => {
       getTree(file, '', tree)
       return tree
   }, {})
+  
 
 const docs: DefaultTheme.SidebarItem[] = treeToItems(tree)
 
@@ -73,7 +77,7 @@ export default defineConfig({
   // https://vitepress.dev/reference/default-theme-config
       nav: [
           { text: '主页', link: '/index.html' },
-          { text: 'API', link: '/doc/index.html' },
+          { text: 'API', link: '/etc/doc/index.html' },
       ],
 
       sidebar: [

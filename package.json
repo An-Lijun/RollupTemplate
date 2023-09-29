@@ -5,12 +5,13 @@
   "main": "index.js",
   "scripts": {
     "build": "npx rollup -c",
-    "doc": "api-extractor run --local --verbose && api-documenter markdown -i temp -o doc",
-    "doc:debug": "api-extractor run --local --verbose --diagnostics && api-documenter markdown -i temp -o doc",
+    "doc": "api-extractor run --local --verbose && api-documenter markdown -i temp -o etc/doc",
+    "doc:debug": "api-extractor run --local --verbose --diagnostics && api-documenter markdown -i temp -o etc/doc",
     "trace": "tsc dist/types/index.d.ts --traceResolution > trace.log",
     "docs:dev": "vitepress dev",
     "docs:build": "vitepress build",
     "docs:preview": "vitepress preview",
+    "commit":"cz",
     "test": "jest",
     "prepare": "husky install"
   },
