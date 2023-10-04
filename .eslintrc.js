@@ -122,47 +122,90 @@ module.exports = {
     'no-alert': 'error', //不能有alert confirm prompt
     'new-cap': ['error', { newIsCap: true }], // 不允许在没有 new 运算符的情况下调用大写字母启动的函数。
     'no-array-constructor': 'error', // 不允许 这样创建数组Array(0, 1, 2) new Array(0, 1, 2) 但可以 Array(500)或 new Array(500)
-    "no-caller": "error",//禁止使用 arguments.caller 和 arguments.callee
-    "no-delete-var": "error",//不允许对变量使用 delete 运算符。
-    'no-else-return': "error",//不允许在 if else 中使用return
-    'no-empty': "error",//不能有空的代码块
-    'no-empty-function': "error",//不能有空的函数
-    "no-eq-null":"error",//不能用变量 == null 但是可以 === null
-    "no-extra-bind":"error",//避免不必要的bind 如箭头函数
-    'no-extra-boolean-cast':"error",//不允许不必要的布尔转换
-    'no-extra-label':'error',// 不允许不必要的label 
-    'no-extra-semi': "error",// 不允许不必要的分号
-    'no-floating-decimal':'error',//不允许  -.7; 只能 -0.7
-    "no-global-assign":"error",//不允许给默认的全局变量赋值
-    'no-implicit-coercion':'error',//不允许用特殊方式转类型 ~ ! !!
-    'no-implicit-globals': "error",//不允许全局定义变量//但是可以window.a=xxx (()=>{var a =1})()
-    'no-implied-eval': "error",// 不允许 setTimeout("alert('Hi!');", 100);
-    'no-inline-comments': "error",//不允许出现代码和注释在一行
-    'no-nested-ternary':'error',//不允许嵌套的使用三元
-    'no-multi-assign': "error",//不能使用链式赋值 如 const a =c=5
-    'no-lone-blocks': "error",// 不能有由大括号限定的独立代码块
-    'no-label-var':'error',//标签不能跟 作用域变量有同名
-    'no-iterator': "error",//禁止出现 Foo.prototype.__iterator__ =  xxx 这种写法
-    'no-new-wrappers': "error",//不可以使用new Number() new String() new Boolean
-    'no-octal': "error",//禁止使用0开头的数字 因为ES5之前是八进制 但是ES6移除了 
-    'no-return-await': "error",//禁止return await 但是可以 const a =await fn(); return a
-    'no-return-assign': ["error", "except-parens"], //不可以在return 中进行赋值 除非用()包裹
-    'no-redeclare': "error",//不可以使用var 重复声明同一个变量
-    'no-undef-init': "error",//不可以将变量初始化为undefined
-    'no-undefined': "error",//不可以定义名为undefined 的变量
-    'no-undefined': "error",//抛出错误只能抛出 new Error()
-    'no-param-reassign': ["error", { "props": false }], //不能给parmas 赋值
-    'no-proto': "error", //var a = obj.__proto__; var a = obj["__proto__"];
-    'no-unused-labels': "error",//不能存在没有使用的标签
-    'no-useless-catch': "error",// 不允许存在 catch 中又throw
-    'no-useless-computed-key': "error",//不允许存在 不必要的计算属性 如 obj['a']
-    "no-useless-concat":'error',// 不允许存在 没必要的字符拼接 如var foo = "a" + "b"; 应该为 var foo = "ab";
-    'no-var': "error",//不允许使用var
-    'no-with': "error",//不允许使用 with
-    'vars-on-top': "error",//变量需要再作用域顶层
-    // 'sort-vars': ["error", { "ignoreCase": true }]//var b, a;    var a, B, c;必须合并 
-    'require-await': "warn",//async 中调用没有 await 的函数
-    'prefer-promise-reject-errors': "error",//reject 必须是new Promise
+    'no-caller': 'error', //禁止使用 arguments.caller 和 arguments.callee
+    'no-delete-var': 'error', //不允许对变量使用 delete 运算符。
+    'no-else-return': 'error', //不允许在 if else 中使用return
+    'no-empty': 'error', //不能有空的代码块
+    'no-empty-function': 'error', //不能有空的函数
+    'no-eq-null': 'error', //不能用变量 == null 但是可以 === null
+    'no-extra-bind': 'error', //避免不必要的bind 如箭头函数
+    'no-extra-boolean-cast': 'error', //不允许不必要的布尔转换
+    'no-extra-label': 'error', // 不允许不必要的label
+    'no-extra-semi': 'error', // 不允许不必要的分号
+    'no-floating-decimal': 'error', //不允许  -.7; 只能 -0.7
+    'no-global-assign': 'error', //不允许给默认的全局变量赋值
+    'no-implicit-coercion': 'error', //不允许用特殊方式转类型 ~ ! !!
+    'no-implicit-globals': 'error', //不允许全局定义变量//但是可以window.a=xxx (()=>{var a =1})()
+    'no-implied-eval': 'error', // 不允许 setTimeout("alert('Hi!');", 100);
+    'no-inline-comments': 'error', //不允许出现代码和注释在一行
+    'no-nested-ternary': 'error', //不允许嵌套的使用三元
+    'no-multi-assign': 'error', //不能使用链式赋值 如 const a =c=5
+    'no-lone-blocks': 'error', // 不能有由大括号限定的独立代码块
+    'no-label-var': 'error', //标签不能跟 作用域变量有同名
+    'no-iterator': 'error', //禁止出现 Foo.prototype.__iterator__ =  xxx 这种写法
+    'no-new-wrappers': 'error', //不可以使用new Number() new String() new Boolean
+    'no-octal': 'error', //禁止使用0开头的数字 因为ES5之前是八进制 但是ES6移除了
+    'no-return-await': 'error', //禁止return await 但是可以 const a =await fn(); return a
+    'no-return-assign': ['error', 'except-parens'], //不可以在return 中进行赋值 除非用()包裹
+    'no-redeclare': 'error', //不可以使用var 重复声明同一个变量
+    'no-undef-init': 'error', //不可以将变量初始化为undefined
+    'no-undefined': 'error', //不可以定义名为undefined 的变量
+    'no-undefined': 'error', //抛出错误只能抛出 new Error()
+    'no-param-reassign': ['error', { props: false }], //不能给parmas 赋值
+    'no-proto': 'error', //var a = obj.__proto__; var a = obj["__proto__"];
+    'no-unused-labels': 'error', //不能存在没有使用的标签
+    'no-useless-catch': 'error', // 不允许存在 catch 中又throw
+    'no-useless-computed-key': 'error', //不允许存在 不必要的计算属性 如 obj['a']
+    'no-useless-concat': 'error', // 不允许存在 没必要的字符拼接 如var foo = "a" + "b"; 应该为 var foo = "ab";
+    'no-var': 'error', //不允许使用var
+    'no-with': 'error', //不允许使用 with
+    'vars-on-top': 'error', //变量需要再作用域顶层
+    // 'sort-vars': ["error", { "ignoreCase": true }]//var b, a;    var a, B, c;必须合并
+    'require-await': 'warn', //async 中调用没有 await 的函数
+    'prefer-promise-reject-errors': 'error', //reject 必须是new Promise
+    'prefer-rest-params': 'error', //使用剩余参数而不是arguments
+    'prefer-spread': 'error', // 使用 rest 而不是 apply形式传递剩余参数 var args = [1, 2, 3, 4]; Math.max.apply(Math, args); Math.max(...args);
+    'prefer-template': 'error', // 使用模板字符串拼接而不是加号
+    radix: 'error', //parseint 必须携带第二个参数
+    'comma-dangle': ['error', 'never'], //不允许对象数组最后又逗号
+    'comma-spacing': ['error', { before: false, after: true }], //逗号后面必须有空格
+    'comma-style': ['error', 'last'], //上一行的逗号必须在上一行
+    'computed-property-spacing': ['error', 'never'], //计算属性不能有空格 如  {}[ a ] => {}[a]
+    'key-spacing': ['error', { afterColon: true }], //属性中:前面不需要空格 后面必须有
+    indent: ['error', 2], //使用两个空格进行缩进
+    // 'eol-last': ["error", "never"],//此规则在非空文件的末尾强制执行至少一个换行符（或没有换行符）。
+    'func-call-spacing': ['error', 'never'], //
+    'function-call-argument-newline': ['error', 'consistent'],//函数调用换行
+    'wrap-regex': "error",// return /foo/.test("bar"); => (/foo/).test("bar");
+    'wrap-iife': ["error", "any"],//var x = function () { return { y: 1 };}(); var x = (function () { return { y: 1 };})()
+    // "template-curly-spacing": ["error", "always"],//
+    "space-unary-ops": [
+      'error', {
+        "words": true,
+        "nonwords": false,
+      }],//   适用于一元词运算符，例如： new, delete, typeof, void, yield 需要空格 而 一元运算符，例如： -, +, --, ++, !, !! 不需要 
+    'space-infix-ops': "error",//1-2 = + 必须有前后空格
+    'space-in-parens': ["error", "never"],// 括号内前后不允许有空格
+    'space-before-function-paren': "error",//定义括号左边不允许有空格
+    'space-before-blocks': "error",// 块级作用域前面必须有空格
+    "semi-style": ["error", "last"],//分号只能与末尾,, 注意这里有的地方需要;开头比如是一个 库
+    'semi-spacing': "error",//分号前面不能有空格
+    'keyword-spacing': "error",//关键词前后必须有空格
+    'lines-between-class-members': ["error", "always"],//不允许类成员之间有空行
+    'max-len': ["error", { "code": 100 ,"ignoreTrailingComments": true}],//一行只能有100个字符 忽略后面的注释
+    'newline-per-chained-call': ["error", { "ignoreChainWithDepth": 2 }],//方法链 如果超过两个必须换行
+    'no-extra-parens': "error",//禁止不必要的小括号
+    'no-mixed-spaces-and-tabs':"error",// 禁止混用制表符和空格
+    'no-multi-spaces': ["error", { ignoreEOLComments: false }],//不允许有多个空格
+    'no-multiple-empty-lines': ["error", { "max": 1, "maxEOF": 0 }],//最大连续空行是1
+    'no-trailing-spaces':'error',//不允许结尾最后有多余的空格
+    'no-whitespace-before-property': "error",//禁止使用属性时候有空格
+    'object-curly-newline': ["error", { "minProperties": 2 }],//对象超过1个必须换行
+    'object-curly-spacing': ["error", "always"],//对象如果是一行需要空格前后 { c:1 }
+    semi: ["error", "always"],//必须添加分号
+    'object-property-newline': "error",//对象强制换行
+    quotes: ["error", "single"],//要求使用单引号/ "double" （默认）要求尽可能使用双引号 "single" 要求尽可能使用单引号"backtick" 要求尽可能使用反引号
+      
   },
   extends: ['']
 };

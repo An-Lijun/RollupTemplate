@@ -7,8 +7,12 @@
  * :type b: number
  * :return: 两个输入数字 a 和 b 之间的差。
  */
-function mix (a: number , b: number): number {
-  console.log(a-b);
+function mix (a: number, b: number): number {
   return a - b;
 }
 export { mix };
+let a={
+  a:123
+  ,b:456
+}
+let c=[1,2,3,4]
