@@ -13,7 +13,8 @@
     "docs:preview": "vitepress preview",
     "commit":"cz",
     "test": "jest",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "lint": "eslint --fix --ext .js,.vue src"
   },
   "author": "",
   "license": "ISC",

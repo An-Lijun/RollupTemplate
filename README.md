@@ -8,10 +8,37 @@
   路径别名alias 可以帮助我们更好的找到文件@=>src
 ## eslint
   文件类型和风格规范
+  使用方式 在 设置搜索 eslint 然后 在配置json 中添加以下配置,就可以在保存时候自动eslint fix
+    //配置eslint
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "html",
+    "vue"
+  ],
+  // "eslint.run": "onSave",
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true // 保存时使用eslint校验文件
+  }
 ## 类型文件打包
   在一些类库中可以使用,可以帮助使用者更好的提示
 ## prettier
-  多人协同开发时候格式化风格的统一
+  多人协同开发时候格式化风格的统一(已移除,采用 eslint进行格式化)
+  .prettierrc.ks 
+  // 因为prettier.json 不能写注释所以我这里用 .js文件
+module.exports = {
+  printWidth: 100, //单行长度
+  tabWidth: 2, //缩进长度
+  useTabs: false, //使用空格代替tab缩进
+  semi: true, //句末使用分号
+  singleQuote: true, //使用单引号
+  bracketSpacing: true, //在对象前后添加空格-eg: { foo: bar }
+  arrowParens: 'avoid', //单参数箭头函数参数周围使用圆括号-eg: (x) => x
+  quoteProps: 'as-needed',//只在必须给对象属性加引号
+  eslintIntegration:true
+  // 缺一个对标 对象 换行的
+};
+// 对象格式化
 
 ## gitignore
   git的忽略文件
