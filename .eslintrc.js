@@ -12,6 +12,8 @@ module.exports = {
     // "hah" : "readonly",
     // globalState: "writable"
   },
+  parser: '@typescript-eslint/parser',
+
   parserOptions: {
     //SLint 解析的时候提供一些语言特性的支持，如 ES 语法、JSX。ESLint 默认支持 ES5 语法。
     /* ecmaVersion: 指定 ECMA 语法版本
@@ -39,6 +41,7 @@ module.exports = {
       jsx: false
     }
   },
+  // plugins: ['@typescript-eslint'],
   // "off"  或者 0: 关闭规则，常用于关闭某个来自extends中的规则。
   // "warn" 或者 1: 规则校验不通过时发出 warning 提示。
   // "error"  或者 2: 规则校验不通过时发出 error 提示，返回 1，表示 lint 检查不通过。
@@ -110,7 +113,7 @@ module.exports = {
     // "consistent-this":["error","that"],// 用来接收this 的必须是that 可以改别名
     'consistent-return': 'error', //一个函数必须有明确的return
     complexity: 'error', //代码圈复杂度 只能在20以内
-    'func-style': ['error', 'declaration'], //函数只能先声明后使用
+    // 'func-style': ['error', 'expression'], //函数只能先声明后使用
     'grouped-accessor-pairs': ['error', 'getBeforeSet'], //有getter setter 必须相邻而且getter在前
     'logical-assignment-operators': ['error', 'always'], //不能使用||= 这种
     'max-classes-per-file': ['error', 1], //一个文件只能有一个类
@@ -207,6 +210,17 @@ module.exports = {
     quotes: ["error", "single"],//要求使用单引号/ "double" （默认）要求尽可能使用双引号 "single" 要求尽可能使用单引号"backtick" 要求尽可能使用反引号
       
   },
-  extends: ['']
+  extends: [''],
+  // settings: {
+  //   'import/resolver': {
+  //     node: {
+  //       extensions: ['.js', '.ts'],
+  //       moduleDirectory: ['node_modules', './src'],
+  //     },
+  //   },
+  // },
+  // parserOptions: {
+  //   project: './tsconfig.json',
+  // },
 };
 // 这里eslint 先不配置了, 要跟prettier一致

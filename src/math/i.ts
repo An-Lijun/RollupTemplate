@@ -11,8 +11,3 @@ function mix (a: number, b: number): number {
   return a - b;
 }
 export { mix };
-let a={
-  a:123
-  ,b:456
-}
-let c=[1,2,3,4]
